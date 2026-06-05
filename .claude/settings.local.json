@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__unity-mcp__Unity_RunCommand",
+      "mcp__unity-mcp__Unity_Camera_Capture",
+      "Bash(sips -g pixelWidth -g pixelHeight __TRACKED_VAR__.png)",
+      "Bash(grep -n \"Map authored \\(2026-06-02\\)\\\\|hosts \\\\`NeighbourHighlighter\\\\|3 district ground sprites\\\\|Prefabs in \\\\`Assets/Prefabs\" CLAUDE.md)",
+      "mcp__unity-mcp__Unity_GetConsoleLogs",
+      "mcp__unity-mcp__Unity_SceneView_CaptureMultiAngleSceneView"
+    ]
+  }
+}

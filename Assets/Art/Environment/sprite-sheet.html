@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arkham — Sprite Exports</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;500&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#0d0f14; --panel:#15181f; --line:#2a2f3a; --txt:#c9c4b4; --dim:#7c8390; --accent:#9a7be0; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font-family:"EB Garamond",Georgia,serif; padding:48px 56px 80px; }
+  header { max-width:1100px; margin:0 auto 40px; }
+  h1 { font-family:"Cinzel",serif; font-weight:700; letter-spacing:.16em; font-size:30px; margin:0 0 8px; }
+  .lead { color:var(--dim); font-size:17px; max-width:760px; line-height:1.5; }
+  .lead b { color:var(--txt); font-weight:500; }
+  h2 { font-family:"Cinzel",serif; font-weight:600; letter-spacing:.1em; font-size:15px; color:var(--accent);
+       text-transform:uppercase; margin:46px auto 18px; max-width:1100px; border-bottom:1px solid var(--line); padding-bottom:10px; }
+  .grid { max-width:1100px; margin:0 auto; display:grid; gap:22px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; }
+  .thumb { aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:14px;
+    background-color:#1b1e25;
+    background-image:
+      linear-gradient(45deg,#23272f 25%,transparent 25%),
+      linear-gradient(-45deg,#23272f 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#23272f 75%),
+      linear-gradient(-45deg,transparent 75%,#23272f 75%);
+    background-size:22px 22px; background-position:0 0,0 11px,11px -11px,-11px 0; }
+  .thumb.wide { aspect-ratio:auto; }
+  .thumb img { max-width:100%; max-height:100%; display:block; }
+  .meta { padding:12px 14px 14px; border-top:1px solid var(--line); }
+  .name { font-family:"Cinzel",serif; font-size:13px; letter-spacing:.05em; color:var(--txt); }
+  .sub { font-size:13px; color:var(--dim); margin-top:3px; }
+  .note { max-width:1100px; margin:14px auto 0; color:var(--dim); font-size:15px; line-height:1.55; }
+  .note code { color:var(--accent); font-family:ui-monospace,monospace; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ARKHAM · SPRITE EXPORTS</h1>
+  <p class="lead">Flat, top-down, transparent. Each file ships as <b>.svg</b> (vector — scale freely / re-export at any size) and <b>.png</b> (2048&nbsp;px, transparent). All district / street art shares the same <b>1024² canvas centred on the district centre</b>, so a centre pivot lines everything up.</p>
+</header>
+
+<h2>Districts (ground)</h2>
+<div class="grid">
+  <figure class="card"><div class="thumb"><img src="district_ground.png" alt=""></div>
+    <figcaption class="meta"><div class="name">district_ground</div><div class="sub">Circular ground · place under the streets</div></figcaption></figure>
+</div>
+
+<h2>Street tiles — single piece (the reusable sprite)</h2>
+<p class="note">The three streets in a district are <b>one piece rotated 120°</b>. Import one of these, set pivot = <code>Center</code>, and instantiate 3× at <code>0° / 120° / 240°</code> to fill a district. Choose the style you locked: <b>puzzle</b>.</p>
+<div class="grid">
+  <figure class="card"><div class="thumb"><img src="street_puzzle.png" alt=""></div>
+    <figcaption class="meta"><div class="name">street_puzzle</div><div class="sub">Locked style · interlocking</div></figcaption></figure>
+  <figure class="card"><div class="thumb"><img src="street_puzzle_void.png" alt=""></div>
+    <figcaption class="meta"><div class="name">street_puzzle_void</div><div class="sub">Corrupted tile · emissive in engine</div></figcaption></figure>
+  <figure class="card"><div class="thumb"><img src="street_petals.png" alt=""></div>
+    <figcaption class="meta"><div class="name">street_petals</div><div class="sub">Alt style</div></figcaption></figure>
+  <figure class="card"><div class="thumb"><img src="street_wedges.png" alt=""></div>
+    <figcaption class="meta"><div class="name">street_wedges</div><div class="sub">Alt style</div></figcaption></figure>
+</div>
+
+<h2>Assembled districts (reference — not for direct import)</h2>
+<div class="grid">
+  <figure class="card"><div class="thumb"><img src="district_puzzle_assembled.png" alt=""></div>
+    <figcaption class="meta"><div class="name">district_puzzle_assembled</div><div class="sub">Ground + 3 tinted streets</div></figcaption></figure>
+  <figure class="card"><div class="thumb"><img src="district_petals_assembled.png" alt=""></div>
+    <figcaption class="meta"><div class="name">district_petals_assembled</div><div class="sub">reference</div></figcaption></figure>
+  <figure class="card"><div class="thumb"><img src="district_wedges_assembled.png" alt=""></div>
+    <figcaption class="meta"><div class="name">district_wedges_assembled</div><div class="sub">reference</div></figcaption></figure>
+</div>
+
+<h2>Bridge tiles</h2>
+<p class="note">Drawn horizontal (2048×768). Pivot = <code>Center</code>; rotate to align each span between two districts.</p>
+<div class="grid">
+  <figure class="card"><div class="thumb wide"><img src="bridge_stone.png" alt=""></div>
+    <figcaption class="meta"><div class="name">bridge_stone</div><div class="sub">Locked style</div></figcaption></figure>
+  <figure class="card"><div class="thumb wide"><img src="bridge_planks.png" alt=""></div>
+    <figcaption class="meta"><div class="name">bridge_planks</div><div class="sub">Alt</div></figcaption></figure>
+  <figure class="card"><div class="thumb wide"><img src="bridge_tapered.png" alt=""></div>
+    <figcaption class="meta"><div class="name">bridge_tapered</div><div class="sub">Alt</div></figcaption></figure>
+</div>
+
+<p class="note" style="margin-top:40px;">See <code>README.md</code> in this folder for Unity import settings (sprite mode, pivot, pixels-per-unit) and the corrupted-tile emissive recipe.</p>
+</body>
+</html>
