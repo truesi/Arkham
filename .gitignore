@@ -105,3 +105,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# macOS Finder junk
+.DS_Store
+
+# Visual Studio / Rider solution file (new XML format; *.sln already covered above)
+*.slnx
+
+# Claude Code local config & memory
+.claude/
